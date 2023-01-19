@@ -5,7 +5,7 @@ export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 70%;
+  width: 60%;
   label {
     margin-top: 30px;
     font-family: "SourceSansPro";
@@ -17,8 +17,10 @@ export const StyledForm = styled.form`
     padding: 5px;
     background: #ffffff;
     border: 1px solid #dde6e9;
+    font-family: "SourceSansPro";
+    font-weight: bold;
     border-radius: 4px;
-    width: 50%;
+    width: 70%;
     height: 35px;
   }
   span {
@@ -38,6 +40,7 @@ export const StyledForm = styled.form`
     width: 50%;
     margin-left: 45%;
     border-radius: 15px;
+    font-family: "SourceSansPro";
     cursor: pointer;
     :hover {
       border: #66afe9 1px solid;

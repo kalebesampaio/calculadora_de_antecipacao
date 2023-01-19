@@ -14,7 +14,7 @@ export const StyledSpan = styled.span`
 `;
 
 export const StyledTitle2 = styled.h2`
-  font-family: "Source Sans Pro";
+  font-family: "SourceSansPro";
   font-weight: 700;
   font-size: 16px;
   text-transform: uppercase;
@@ -22,7 +22,7 @@ export const StyledTitle2 = styled.h2`
 `;
 
 export const StyledParagraph = styled.p`
-  font-family: "Source Sans Pro";
+  font-family: "SourceSansPro";
   font-size: 16px;
   color: #5d9cec;
 `;

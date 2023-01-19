@@ -2,7 +2,6 @@ import { StyledBold, StyledParagraph } from "../../styles/typography";
 import { StyleInfoCard } from "./styles";
 
 export const InfoCard = ({ value, keys }) => {
-  console.log(keys);
   return (
     <StyleInfoCard>
       <StyledParagraph>
