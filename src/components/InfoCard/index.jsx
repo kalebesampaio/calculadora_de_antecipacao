@@ -1,7 +1,21 @@
-export const InfoCard = ({ value }) => {
+import { StyledBold, StyledParagraph } from "../../styles/typography";
+import { StyleInfoCard } from "./styles";
+
+export const InfoCard = ({ value, keys }) => {
+  console.log(keys);
   return (
-    <li>
-      <span>{value}</span>
-    </li>
+    <StyleInfoCard>
+      <StyledParagraph>
+        {keys === 1 ? "Amanhã:" : `Em ${keys} dias:`}
+
+        <StyledBold>
+          {" "}
+          {value.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+          })}
+        </StyledBold>
+      </StyledParagraph>
+    </StyleInfoCard>
   );
 };

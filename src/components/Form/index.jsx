@@ -2,6 +2,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { api } from "../../services/api";
+import { StyledTitle } from "../../styles/typography";
+import { StyledForm } from "./styles";
 
 export const Form = ({ setNum }) => {
   const schema = yup.object({
@@ -43,7 +45,8 @@ export const Form = ({ setNum }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit(resgisterAmount)}>
+    <StyledForm onSubmit={handleSubmit(resgisterAmount)}>
+      <StyledTitle>Simule sua Antecipação</StyledTitle>
       <label htmlFor="amount">Informe o valor da venda*</label>
       <input id="amount" type="text" {...register("amount")} />
       <span>{errors.amount?.message}</span>
@@ -56,6 +59,6 @@ export const Form = ({ setNum }) => {
       <input id="mdr" type="text" {...register("mdr")} />
       <span>{errors.mdr?.message}</span>
       <button>Calcular</button>
-    </form>
+    </StyledForm>
   );
 };

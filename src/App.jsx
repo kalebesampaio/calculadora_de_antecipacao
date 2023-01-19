@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { DivApp } from "./AppStyle";
 import { Form } from "./components/Form";
 import { InfoCard } from "./components/InfoCard";
 import { List } from "./components/List";
@@ -9,21 +10,21 @@ function App() {
   useEffect(() => {}, [num]);
 
   return (
-    <div className="App">
+    <DivApp className="App">
       <Form setNum={setNum}></Form>
       <List>
         {num ? (
           <>
-            <InfoCard value={num["1"] / 100}></InfoCard>
-            <InfoCard value={num["15"] / 100}></InfoCard>
-            <InfoCard value={num["30"] / 100}></InfoCard>
-            <InfoCard value={num["90"] / 100}></InfoCard>
+            <InfoCard value={num["1"] / 100} keys={1}></InfoCard>
+            <InfoCard value={num["15"] / 100} keys={15}></InfoCard>
+            <InfoCard value={num["30"] / 100} keys={30}></InfoCard>
+            <InfoCard value={num["90"] / 100} keys={90}></InfoCard>
           </>
         ) : (
           <li></li>
         )}
       </List>
-    </div>
+    </DivApp>
   );
 }
 
