@@ -7,17 +7,22 @@ import { StyledForm } from "./styles";
 
 export const Form = ({ setNum }) => {
   const schema = yup.object({
-    amount: yup.string("Deve ser um numero").required("é obrigatorio"),
+    amount: yup
+      .number()
+      .typeError("Deve ser um número")
+      .required("É obrigatorio"),
     installments: yup
       .number()
-      .positive("deve ser positivo")
-      .min(1, "o valor deve ser no minimo 1")
-      .max(12, "o valor dever ser no maximo 12")
-      .required("é obrigatorio"),
+      .typeError("Deve ser um número")
+      .positive("Deve ser positivo")
+      .min(1, "Mínimo de 1 parcela")
+      .max(12, "Máximo de 12 parcelas")
+      .required("É obrigatorio"),
     mdr: yup
-      .number("Deve ser um numero")
+      .number()
+      .typeError("Deve ser um número")
       .positive("deve ser positivo")
-      .required("é obrigatorio"),
+      .required("É obrigatorio"),
   });
   const {
     register,

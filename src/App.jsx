@@ -21,7 +21,12 @@ function App() {
             <InfoCard value={num["90"] / 100} keys={90}></InfoCard>
           </>
         ) : (
-          <li></li>
+          <>
+            <InfoCard value={0} keys={1}></InfoCard>
+            <InfoCard value={0} keys={15}></InfoCard>
+            <InfoCard value={0} keys={30}></InfoCard>
+            <InfoCard value={0} keys={90}></InfoCard>
+          </>
         )}
       </List>
     </DivApp>
