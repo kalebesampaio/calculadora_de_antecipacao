@@ -4,6 +4,7 @@ import { Form } from "./components/Form";
 import { InfoCard } from "./components/InfoCard";
 import { List } from "./components/List";
 import loading_img from "./img/loading.svg";
+import { StyledParagraph, StyledParagraphError } from "./styles/typography";
 function App() {
   const [num, setNum] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -29,7 +30,11 @@ function App() {
             <InfoCard value={num["90"] / 100} keys={90}></InfoCard>
           </>
         ) : apiError ? (
-          <p>error</p>
+          <div>
+            <StyledParagraphError>
+              Servidor não respondendo
+            </StyledParagraphError>
+          </div>
         ) : (
           <>
             <InfoCard value={0} keys={1}></InfoCard>

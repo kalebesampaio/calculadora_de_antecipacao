@@ -30,3 +30,9 @@ export const StyledParagraph = styled.p`
 export const StyledBold = styled.span`
   font-weight: bolder;
 `;
+
+export const StyledParagraphError = styled.p`
+  font-family: "SourceSansPro";
+  font-size: 16px;
+  color: red;
+`;
