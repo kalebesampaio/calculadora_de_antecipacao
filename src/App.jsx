@@ -4,7 +4,7 @@ import { Form } from "./components/Form";
 import { InfoCard } from "./components/InfoCard";
 import { List } from "./components/List";
 import loading_img from "./img/loading.svg";
-import { StyledParagraph, StyledParagraphError } from "./styles/typography";
+import { StyledParagraphError } from "./styles/typography";
 function App() {
   const [num, setNum] = useState(null);
   const [loading, setLoading] = useState(false);
