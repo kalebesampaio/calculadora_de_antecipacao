@@ -5,12 +5,9 @@ import { api } from "../../services/api";
 import { StyledTitle } from "../../styles/typography";
 import { StyledForm } from "./styles";
 
-export const Form = ({ setNum }) => {
+export const Form = ({ setNum, setLoading, setApiError }) => {
   const schema = yup.object({
-    amount: yup
-      .number()
-      .typeError("Deve ser um número")
-      .required("É obrigatorio"),
+    amount: yup.string("Deve ser um número").required("É obrigatorio"),
     installments: yup
       .number()
       .typeError("Deve ser um número")
@@ -32,6 +29,8 @@ export const Form = ({ setNum }) => {
     resolver: yupResolver(schema),
   });
   const resgisterAmount = (data) => {
+    setLoading(true);
+    setApiError(false);
     api
       .post("", {
         amount: parseFloat(
@@ -50,8 +49,11 @@ export const Form = ({ setNum }) => {
       })
       .then(function (response) {
         setNum(response.data);
+        setLoading(false);
       })
       .catch(function (error) {
+        setLoading(false);
+        setApiError(true);
         console.error(error);
       });
   };

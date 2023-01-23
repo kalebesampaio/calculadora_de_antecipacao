@@ -3,23 +3,33 @@ import { DivApp } from "./AppStyle";
 import { Form } from "./components/Form";
 import { InfoCard } from "./components/InfoCard";
 import { List } from "./components/List";
-
+import loading_img from "./img/loading.svg";
 function App() {
   const [num, setNum] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [apiError, setApiError] = useState(false);
 
   useEffect(() => {}, [num]);
 
   return (
     <DivApp className="App">
-      <Form setNum={setNum}></Form>
+      <Form
+        setNum={setNum}
+        setLoading={setLoading}
+        setApiError={setApiError}
+      ></Form>
       <List>
-        {num ? (
+        {loading ? (
+          <img id="loading" src={loading_img} alt="Loading" />
+        ) : num ? (
           <>
             <InfoCard value={num["1"] / 100} keys={1}></InfoCard>
             <InfoCard value={num["15"] / 100} keys={15}></InfoCard>
             <InfoCard value={num["30"] / 100} keys={30}></InfoCard>
             <InfoCard value={num["90"] / 100} keys={90}></InfoCard>
           </>
+        ) : apiError ? (
+          <p>error</p>
         ) : (
           <>
             <InfoCard value={0} keys={1}></InfoCard>
